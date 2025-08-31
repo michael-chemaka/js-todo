@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", "DM Sans", sans-serif;
+}
+
+
+
+.container {
+    min-height: 100vh;
+    background-color: #17263D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 1.4rem;
+    color: #FFF;
+    background-color: #1E2E4F;
+}
+header > .user-profile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+
+header > .date-time {
+   display: flex;
+   margin-bottom: 1.5rem;
+   font-size: 0.9rem;
+}
+
+header > .date-time > .time {
+    margin-left: 2rem;
+}
+
+.open-button {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.open-button:hover {
+    color: #ED4B00;
+}
+
+form {
+    display: flex;
+    border: 1px solid currentColor;
+    width: 100%;
+    height: 2.5rem;
+    color: #FFF;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+    
+}
+
+input[type="search"] {
+    width: 90%;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0.1rem 1rem;
+    font-size: 0.8rem;
+    color: inherit;
+    background:  transparent;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+    color: #FFF;
+}
+
+button[type="submit"] {
+    width: 10%;
+    padding: 0;
+    margin: 0;
+    color: #FFF;
+    background-color: #ED4B00;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button[type="search"]:focus,
+input[type="submit"]:focus {
+    outline: none;
+    border-color: #1183d6;
+}
+
+ul, li {
+    font-size: 14px;
+    
+    list-style: none;
+    cursor: pointer;
+}
+
+
+li {
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    background: #000C354D;
+    border-radius: 5px;
+    margin: 4px 0;
+    padding: 15px 10px;
+}
+
+.task-content .task {
+    display: inline-block;      /* Prevent block forcing new lines */
+    margin: 0;
+    word-break: break-word;     /* Wrap long words safely */
+  }
+  
+
+li.completed .task {
+    text-decoration: line-through;
+    color: gray;
+      
+  }
+
+  .task-content {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 1; /* Take available space */
+  }
+
+li .control{
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+
+#todoList {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 1rem;
+}
+
+.button-input-container {
+    width: 100%;
+    gap:0.75rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.plus-button {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    background: #bc42f4;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+/* Hide plus-btn when active (input visible) */
+.button-input-container.active .plus-button {
+    display: none;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.4s cubic-bezier(.4,2.2,.2,1), opacity 0.25s
+}
+
+.button-input-container.active .input-wrapper {
+    opacity: 1;
+    width: 100%; 
+  }
+
+
+.task-input {
+    padding: 0 1rem;
+    border-radius: 0.2rem;
+    background: #f4f6fa;
+    color: #333;
+    font-size: 1rem;
+    width: 60%;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    box-shadow: 0 4p 14px #0001;
+
+}
+
+/* Show input+add button when active */
+.button-input-container.active .task-input {
+    width: 90%;
+    opacity: 1;
+}
+
+.add-task-button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background: #bc42f4;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(.4,2.2,.2,1);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Modal Styling*/
+
+.modal {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    padding: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal h3 {
+    margin-top: 0rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+.modal label {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.modal input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    outline: inherit;
+    border-radius: 4px;
+}
+
+#saveUsernameButton {
+    background-color: #ce4100;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#saveUsernameButton:hover {
+    background-color: #ED4B00;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+  }
+  
+  .hidden {
+    display: none;
+  }

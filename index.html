@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <section class="container">
+        <div class="card">
+            <header>
+                <div class="user-profile"> 
+                    <h2 id="greeting">Hey, User!</h2>
+                    <span class="material-symbols-outlined open-button" id="openButton">account_circle</span>
+                </div>
+                <div class="date-time">
+                    <span class="date" id="currentDate"></span>
+                    <span class="time" id="currentTime"></span>
+                </div>
+               <form action="" class="search">
+                <input type="search" id="myInput" placeholder="Search your lists...">
+                <button type="submit"><span class="material-symbols-outlined user-avatar" id="userAvatar">search</span></button>
+               </form>
+                
+            </header>
+
+            <div class="card-contents">
+                <ul class="task-container">
+               
+                </ul>
+
+                <div class="button-input-container">
+                    <button class="plus-button" id="toggleInputButton">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    
+                    <div class="input-wrapper" id="inputWrapper">
+                        <input type="text" class="task-input" id="taskInput" placeholder="Add a task..." />
+                        <button class="add-task-button" id="addTaskButton">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+        </div> 
+
+        <section class="modal hidden" id="profileModal">
+                <div class="flex">
+                    <h3> User Profile</h3>
+                    <span class="material-symbols-outlined close-button" id="closeButton">close</span>
+                </div>  
+                    <div>
+                        
+                        <p><strong>Username:</strong><span id="displayUsername"></span></p>
+                        <label for="editUsername">Change Username:</label>
+                        <input type="text" id="editUsername" placeholder="Enter a new username..."/>
+                        <button id="saveUsernameButton">Save</button>
+                    </div>
+        </section>
+    
+        <div class="overlay hidden"></div>
+
+    </section>
+
+    <!-----------Modal----------->
+
+ 
+   
+
+
+    <script src="script.js"></script>
+</body>
+</html>
